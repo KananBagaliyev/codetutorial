@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    
+    <link rel="stylesheet" type="text/css" href="syntax-highlighter/styles/shCore.css" media="all">
+    <link rel="stylesheet" type="text/css" href="syntax-highlighter/styles/shThemeRDark.css" media="all">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="preload">
+        <h2>İki dəfə düşün🤔<br>
+        Bir dəfə <span>Kodla</span>.</h2>
+    </div>
+    <!-- navbar area starts -->
+    <header>
+        <div class="container">
+            <div class="row" >
+                <div class="col-md-3 col-10 ">
+                    <div class="logo">
+                        <img src="img/logo.png" alt="">
+                    </div>
+                </div>
+                <div class="col-1 menu_bar">
+                    <a  class="menu_icon" ><i class="fas fa-bars"></i></a>
+                </div>
+                <div class="col-md-8 nav_bar">
+                    <nav>
+                        <ul>
+                            <li><a class="special_underline" href="">Əsas səhifə</a></li>
+                            <li><a class="special_underline" href="">Kurslar</a></li>
+                            <li><a class="special_underline" href="">Editor</a></li>
+                            <li><a class="special_underline" href="">Əlaqə</a></li>
+                            <li><a class="special_underline" href=""><i class="fas fa-bookmark"></i></a></li>
+                            <li><a class="special_underline" href="">Daxil ol / Qeydiyyat</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-11 ">
+                    <nav class="mobile_navbar">
+                        <ul>
+                            <li><a href="">Əsas səhifə</a></li>
+                            <li><a href="">Kurslar</a></li>
+                            <li><a href="">Editor</a></li>
+                            <li><a href="">Əlaqə</a></li>
+                            <li><a href="">Saxlanılmış Kurslar</a></li>
+                            <li><a href="">Daxil ol/Qeydiyyat</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- navbar area ends -->
+
+    <main>
+        <section id="article_header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-12">
+                        <div class="article_header">
+                            <h2 class="article_title">Html, CSS və JS işlədərək Navbar düzəltmək</h2>
+                            <div class="course_tools">
+                                <a href="">JQUERY</a>
+                            </div>
+                            <p>
+                                Header bar only show when scrolling up with simple jQuery and CSS trick.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="article_content" class="section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="article_content">
+                            
+                            <article class="article_post">
+                                With this simple jQuery will add a class on the header to show. We will need some CSS and jquery to make it happens.
+
+                                HTML markup will be something like that..
+                                <div class="code_name">Index.html.</div>
+                                    <pre class="brush: html">
+                                    </pre>
+                                Here on HTML we have <b>header_area</b> Class. We will add a new Class when the user scrolls up. The class will only add when user trying to go up after scroll down to the page
+                                <div class="code_name">Custom. js</div>
+                                    <pre class="brush: js">
+                                        var prevScrollpos = window.pageYOffset;
+                                            window.onscroll = function () {
+                                                var currentScrollPos = window.pageYOffset;
+                                                if (prevScrollpos > currentScrollPos) {
+                                                    $(".header_area").addClass('sticky');
+                                                } else {
+                                                    $(".header_area").removeClass('sticky');
+                                                }
+                                                prevScrollpos = currentScrollPos;
+                                            }
+                                    </pre>
+                            Now we have a sticky class with our <h6>header_area</h6>. But we need to hide Header when scrolling down. To do that we need to add one more class to we can hide when scroll down. 
+
+                                <div class="code_name">Custom.js</div>
+                                    <pre class="brush: js">
+                                        $(window).scroll(function() {
+                                            if ($(this).scrollTop()) {
+                                                // add class when scroll down
+                                                $(".header_area").addClass("sticky_top");
+                                            } else {
+                                                //Remove Class when header stay at top
+                                                $(".header_area").removeClass("sticky");
+                                                $(".header_area").removeClass("sticky_top");
+                                            }
+                                            });
+                                    </pre>
+                                We just added sticky_top calls with our header when it go scroll down. And remove all two classes that we added last time for scroll down to scroll up.
+
+                                We are done now just use your own css show it like as you want. I will give you some as example
+                                <div class="code_name">CSS for hide header when scrolling down</div>
+                                    <pre class="brush: css">
+                                        .header_area.sticky_top {
+                                        position: fixed;
+                                        width: 100%;
+                                        top: 0;
+                                        background: #000;
+                                        color: #fff;
+                                        z-index: 99;
+                                        padding: 10px 0;
+                                        opacity: 0;
+                                        visibility: hidden;
+                                    </pre>
+                                <div class="code_name">After go down and scrolling up</div>
+                                    <pre class="brush: css">
+                                        .header_area.sticky_top.sticky{
+                                            opacity: 1;
+                                            visibility: visible;
+                                        }
+                                    </pre>
+                                That’s the all. Hope it helps. Comment below if you have any issue with this code. 
+                            </article>
+                        </div>
+                        <div class="article_share">
+                            <h5 class="mb-4">Bu məqaləni paylaşın.</h5>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer area starts -->
+    <footer>
+        <section id="footer_navigation">
+            <div class="container">
+                <div class="row section-padding justify-content-center">
+                    <div class="col-lg-4 col-sm-6 col-12 navigation_holder">
+                        <div class="footer_navigation">
+                            <h4>Naviqasiya</h4>
+                            <ul>
+                                <li><a href="">Əsas səhifə</a></li>
+                                <li><a href="">Kurslar</a></li>
+                                <li><a href="">Editor</a></li>
+                                <li><a href="">Əlaqə</a></li>
+                                <li><a href="">Daxil ol / Qeydiyyat</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-12 navigation_holder">
+                        <div class="footer_links">
+                            <h4>Linklər</h4>
+                            <ul>
+                                <li><a href="">Linkedin</a></li>
+                                <li><a href="">Github</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="copyright">
+            <div class="container">
+                <div class="row footer_copy">
+                    <div class="col-12">
+                        <div class="copyright">
+                            <p>Copyright © 2020, Developed by Kanan Bagaliyev</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <!-- footer area ends -->
+
+    <!-- Font-Awesome -->
+    <script src="https://kit.fontawesome.com/5745faddfa.js" crossorigin="anonymous"></script>
+
+    <!-- Jquery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Owl Carousel -->
+    <script src="js/slick.min.js"></script>
+
+    <!-- Syntax-Highlighter -->
+    <script src="syntax-highlighter/scripts/shCore.js"></script>
+    <script src="syntax-highlighter/scripts/shBrushXml.js"></script>
+    <script src="syntax-highlighter/scripts/shBrushCss.js"></script>
+    <script src="syntax-highlighter/scripts/shBrushJScript.js"></script>
+    
+    <!-- Main Js -->
+    <script src="js/script.js"></script>
+
+    <script>
+        
+        // Syntax-Highlighter
+        SyntaxHighlighter.all();
+    </script>
+</body>
+</html>
