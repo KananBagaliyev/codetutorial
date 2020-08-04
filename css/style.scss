@@ -712,9 +712,47 @@ main{
 }
 
 main{
-    #subject{
-        background-color: $secondary_color;
-        padding: 120px 0px 90px 0px;
+    #text_editor{
+        // .CodeMirror{
+        //     width: 50%;
+        // }
+        
+        display: flex;
+        justify-content: center;
+        .code_editor{
+            .editor_header{
+                background-color: $editor_header_background_color;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                a{
+                    height: 100%;
+                    margin-right: 15px;
+                    padding: 0px 10px;
+                    background:#444857
+                }
+                h3{
+                    color:$editor_header_color;
+                    margin:0;
+                    margin-left:15px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+        .result_button{
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+        }
+        iframe{
+            display: block;
+            background-color: $editor_header_color;
+            width: 100%;
+            height: 300px;
+            p{
+                color:white!important;
+            }
+        }
     }
 }
 
