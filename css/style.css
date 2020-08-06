@@ -13,7 +13,7 @@
   }
 }
 
-@media only screen and (min-width: 767px) {
+@media only screen and (min-width: 768px) {
   .mobile_navbar {
     display: none !important;
   }
@@ -24,7 +24,19 @@
   }
 }
 
-@media only screen and (max-width: 1500px) {
+/* extra small device*/
+@media only screen and (min-width: 577px) {
+  .navigation_holder {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+  }
+}
+
+@media only screen and (max-width: 1499px) {
   .page_changer {
     display: none;
   }
@@ -36,6 +48,9 @@
   }
   .form_support {
     width: 80% !important;
+  }
+  #bookmark .course_table .saved_courses .fa-bookmark {
+    margin-right: 15px;
   }
 }
 
@@ -75,10 +90,6 @@
   .form_support a {
     margin-top: 15px;
   }
-}
-
-/* Wide Mobile Layout: 480px. */
-@media only screen and (max-width: 767px) {
   .nav_bar {
     display: none !important;
   }
@@ -87,18 +98,6 @@
   }
   .text_contact {
     margin-top: 30px;
-  }
-}
-
-/* extra small device*/
-@media only screen and (min-width: 576px) {
-  .navigation_holder {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center !important;
-        -ms-flex-pack: center !important;
-            justify-content: center !important;
   }
 }
 
@@ -198,6 +197,45 @@ body {
 .preload_finish {
   opacity: 0;
   pointer-events: none;
+}
+
+.checkbox_input {
+  display: none;
+}
+
+.checkbox_box {
+  height: 20px;
+  width: 20px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.checkbox_box::after {
+  content: "\2714";
+  color: #142237;
+  font-size: 15px;
+}
+
+.checkbox_input:checked + .checkbox_box {
+  background-color: #3348a3;
+  border: 1px solid #3348a3;
+}
+
+.checkbox_input:checked + .checkbox_box::after {
+  color: #fff !important;
 }
 
 .checkbox input {
@@ -316,6 +354,10 @@ a {
   background: #000000;
 }
 
+.selected_course {
+  border: 2px solid #b50d0d !important;
+}
+
 .code_name {
   display: block;
   background: #282a36;
@@ -386,6 +428,10 @@ header .menu_bar .menu_icon i {
 }
 
 header .mobile_navbar {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   display: none;
   z-index: 999;
   background-color: #081426;
@@ -409,16 +455,46 @@ header .mobile_navbar ul li a {
   font-weight: 600;
 }
 
+header .mobile_navbar ul .sub_menu_holder .menu_title {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .mobile_navbar ul .sub_menu_holder .menu_title .expand {
+  text-align: right;
+  width: 12%;
+  background-color: #212c3c;
+}
+
+header .mobile_navbar ul .sub_menu_holder .sub_menu {
+  display: none;
+}
+
+header .mobile_navbar ul .sub_menu_holder .sub_menu li a {
+  color: #b1b5bb !important;
+  padding: 10px 5% !important;
+  margin-left: 15px;
+  font-weight: 300;
+}
+
 header .nav_bar {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: right;
-      -ms-flex-pack: right;
-          justify-content: right;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 header .nav_bar nav ul {
@@ -441,6 +517,35 @@ header .nav_bar nav ul li a {
   -webkit-transition: .3s;
   transition: .3s;
   position: relative;
+}
+
+header .nav_bar nav ul .sub_menu_holder .sub_menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  background: #000 !important;
+  color: #ddd;
+  position: absolute;
+  top: 100%;
+  width: 160px;
+  z-index: 2;
+  display: none;
+}
+
+header .nav_bar nav ul .sub_menu_holder .sub_menu li {
+  margin-left: 0;
+  border-bottom: 1px solid #142237;
+  width: 100%;
+  padding: 15px;
+  display: block;
+  margin: 0;
 }
 
 main #search {
@@ -1028,5 +1133,51 @@ main #text_editor iframe {
 
 main #text_editor iframe p {
   color: white !important;
+}
+
+main #bookmark .course_table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+main #bookmark .course_table thead tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50px;
+}
+
+main #bookmark .course_table thead tr th {
+  margin-left: 50px;
+}
+
+main #bookmark .course_table thead tr button[type="submit"] {
+  margin-bottom: 15px;
+  display: none;
+}
+
+main #bookmark .course_table tr {
+  margin-top: 15px;
+}
+
+main #bookmark .course_table .saved_courses {
+  background-color: #142237;
+  border: 1px solid #142237;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main #bookmark .course_table .saved_courses td {
+  margin-left: 50px;
+}
+
+main #bookmark .course_table .saved_courses .saved_course {
+  margin-top: 15px;
+  margin-left: 25px;
 }
 /*# sourceMappingURL=style.css.map */

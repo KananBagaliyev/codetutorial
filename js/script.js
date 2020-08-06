@@ -33,6 +33,33 @@ $(document).ready(function(){
       }
     })
 
+    //dropdown menu button
+    if($(window).width()>767){
+      
+      $(".sub_menu_holder").hover(function(e){
+        e.preventDefault()
+        $(this).find(".sub_menu").stop( true, true ).fadeToggle()
+      })
+      
+
+    }
+    else if($(window).width()<=767){
+      $(".sub_menu_holder").click(function(e){
+        e.preventDefault()
+        $(this).find(".sub_menu").stop( true, true ).slideToggle()
+        console.log($(this).find(".fa-plus").attr("class"))
+        if($(this).find(".fa-plus").attr("class")=="fas fa-plus"){
+          console.log(  $(this).find(".fa-plus"))
+          $(this).find(".fa-plus").addClass("fa-minus")
+          $(this).find(".fa-plus").removeClass("fa-plus")
+        }
+        else{
+          $(this).find(".fa-minus").addClass("fa-plus")
+          $(this).find(".fa-minus").removeClass("fa-minus")
+        }
+      })
+
+    }
     // Sticky Navbar
     window.addEventListener("scroll",function(){
       var header = document.querySelector("header")

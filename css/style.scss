@@ -45,6 +45,32 @@ body{
     opacity: 0;
     pointer-events: none;
 }
+.checkbox_input {
+	display: none;
+}
+.checkbox_box {
+	height: 20px;
+	width: 20px;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: .3s;
+}
+.checkbox_box::after{
+	content: "\2714";
+	color: #142237;
+	font-size: 15px;
+}
+.checkbox_input:checked + .checkbox_box{
+	background-color: #3348a3;
+	border: 1px solid #3348a3;
+}
+.checkbox_input:checked + .checkbox_box::after{
+	color: #fff!important;
+}
 
 .checkbox{
     input{
@@ -139,6 +165,11 @@ a{
     background: $navbar_color;
 }
 
+
+.selected_course{
+    border:2px solid #b50d0d!important;
+}
+
 .code_name{
     display: block;
     background: #282a36;
@@ -199,6 +230,7 @@ header{
         }
     }
     .mobile_navbar{
+        user-select: none;
         display: none;
         z-index:999;
         background-color: $mobile_navbar_color;
@@ -222,12 +254,36 @@ header{
                     font-weight: 600;
                 }
             }
+            
+            .sub_menu_holder{
+                .menu_title{
+                    display:flex!important;
+                    justify-content: space-between;
+                    .expand{
+                        text-align: right;
+                        width: 12%;
+                        background-color: #212c3c;
+                    }
+                }
+                .sub_menu{
+                    display: none;
+                    li{
+                        a{
+                            color:#b1b5bb!important;
+                            padding: 10px 5%!important;
+                            margin-left: 15px;
+                            font-weight: 300;
+                        }
+                    }
+                }
+            }
         }
     }
     .nav_bar{
+        user-select: none;
         display: flex ;
         align-items: center;
-        justify-content: right;
+        justify-content: flex-end;
        nav{
             ul{
                 display: flex;
@@ -245,6 +301,28 @@ header{
                     }
                     
         
+                }
+                .sub_menu_holder{
+                    .sub_menu{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: start;
+                        background: #000!important;
+                        color: #ddd;
+                        position: absolute;
+                        top: 100%;
+                        width: 160px;
+                        z-index: 2;
+                        display: none;
+                        li{
+                            margin-left: 0;
+                            border-bottom: 1px solid #142237;
+                            width: 100%;
+                            padding: 15px;
+                            display: block;
+                            margin: 0;
+                        }
+                    }
                 }
             }
        }
@@ -755,6 +833,47 @@ main{
         }
     }
 }
+
+main{
+    #bookmark{
+        .course_table{
+            border-collapse:collapse ;
+            thead{
+                tr{
+                    display: flex;
+                    height: 50px;
+                    th{
+                        margin-left: 50px;
+                    }
+                    button[type="submit"]{
+                        margin-bottom: 15px;
+                        display: none;
+                    }
+                }
+            }
+            tr{
+                margin-top: 15px;
+            }
+            .saved_courses{
+                background-color: $secondary_color;
+                border:1px solid $secondary_color;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                td{
+                    margin-left: 50px;
+                }
+                .saved_course{
+                    margin-top: 15px;
+                    margin-left: 25px;
+                }
+            }
+            width: 100%;  
+        }
+        
+    }
+}
+
 
 
 

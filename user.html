@@ -214,8 +214,7 @@
 
     <script>
         $(".action_change .changer").click(function(){
-            if($(window).width()>1500){
-                console.log("1500")
+            if($(window).width()>=1500){
                 if($(this).closest(".animated_form").hasClass("sign_in")){
                 sessionStorage.setItem("page" ,"sign_up") 
                 $(this).closest(".animated_form").animate({"margin-left":"50%"})
@@ -228,7 +227,6 @@
                 }
             }
             else{
-                console.log("<1500")
                 if($(this).closest(".animated_form").hasClass("sign_in")){
                 sessionStorage.setItem("page" ,"sign_up") 
                 $(this).closest(".animated_form").animate({"margin-left":"100%"})
@@ -243,7 +241,7 @@
         })
 
         window.onload = function(){
-            if(window.matchMedia("min-width:1500px").matches){
+            if($(window).width()>=1500){
                 if(sessionStorage.getItem("page")=="sign_up" ){
                     $("#sign_in_form").css({"margin-left":"50%"})
                     $("#sign_up_form").css({"margin-left":"0%"})

@@ -14,14 +14,22 @@
 	}
 }
 
-@media only screen and (min-width: 767px) { 
+@media only screen and (min-width: 768px) { 
 	.mobile_navbar {
 		display: none!important;
 	}.nav_bar{
 		display: flex!important;
 	}
 }
-@media only screen and (max-width: 1500px){
+
+/* extra small device*/
+@media only screen and (min-width:577px){ 
+	.navigation_holder{
+		display: flex;
+		justify-content: center!important;
+	}
+}
+@media only screen and (max-width: 1499px){
 	.page_changer{
 		display: none;
 	}
@@ -33,6 +41,16 @@
 	}
 	.form_support{
 		width: 80%!important;
+	}
+	#bookmark{
+		.course_table{
+			.saved_courses{
+				.fa-bookmark{
+					margin-right: 15px;
+				}
+			}
+		}
+		
 	}
 }
 
@@ -85,10 +103,6 @@
 		}
 
 	}
-}
-
-/* Wide Mobile Layout: 480px. */
-@media only screen and (max-width: 767px) { 
 	.nav_bar{
 		display: none!important;
 	}
@@ -99,13 +113,7 @@
 		margin-top: 30px;
 	}
 }
-/* extra small device*/
-@media only screen and (min-width:576px){ 
-	.navigation_holder{
-		display: flex;
-		justify-content: center!important;
-	}
-}
+
 @media only screen and (max-width: 576px){ 
 	.navigation_holder{
 		margin-bottom: 25px;
