@@ -76,6 +76,21 @@
 			}
 		}
 	}
+	main{
+		#account{
+			form{
+				display: flex;
+				justify-content: center;
+				flex-direction:column ;
+				button[type="submit"]{
+					display: block;
+				}
+				button[id="save"]{
+					display: none;
+				}
+			}
+		}
+	}
 }
 @media only screen and (max-width: 767px) { 
 	.wrap {

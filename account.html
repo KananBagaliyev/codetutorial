@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+</head>
+<body>
+    <div class="preload">
+        <h2>İki dəfə düşün🤔<br>
+        Bir dəfə <span>Kodla</span>.</h2>
+    </div>
+    <!-- navbar area starts -->
+    <header>
+        <div class="container">
+            <div class="row" >
+                <div class="col-md-3 col-10 ">
+                    <div class="logo">
+                        <img src="img/logo.png" alt="">
+                    </div>
+                </div>
+                <div class="col-1 menu_bar">
+                    <a  class="menu_icon" ><i class="fas fa-bars"></i></a>
+                </div>
+                <div class="col-md-8 nav_bar">
+                    <nav>
+                        <ul>
+                            <li><a class="special_underline" href="">Əsas səhifə</a></li>
+                            <li><a class="special_underline" href="">Kurslar</a></li>
+                            <li><a class="special_underline" href="">Editor</a></li>
+                            <li><a class="special_underline" href="">Əlaqə</a></li>
+                            <li><a class="special_underline" href=""><i class="fas fa-bookmark"></i></a></li>
+                            <!-- <li><a class="special_underline" href="">Daxil ol / Qeydiyyat</a></li> -->
+                            <li class="sub_menu_holder">
+                                <a href="">Kanan Bagaliyev</a>
+                                <ul class="sub_menu">
+                                    <li><a href="">Hesabım</a></li>
+                                    <li><a href="">Çıxış et</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-11 ">
+                    <nav class="mobile_navbar">
+                        <ul>
+                            <li><a href="">Əsas səhifə</a></li>
+                            <li><a href="">Kurslar</a></li>
+                            <li><a href="">Editor</a></li>
+                            <li><a href="">Əlaqə</a></li>
+                            <li><a href="">Saxlanılmış Kurslar</a></li>
+                            <!-- <li><a href="">Daxil ol/Qeydiyyat</a></li> -->
+                            <li class="sub_menu_holder">
+                                <div class="menu_title">
+                                    <a >Kanan Bagaliyev</a>
+                                    <a href="" class="expand"><i class="fas fa-plus"></i></a>
+                                </div>
+                                <ul class="sub_menu">
+                                    <li><a href="">Hesabım</a></li>
+                                    <li><a href="">Çıxış et</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- navbar area ends -->
+
+    <main>
+        <section id="account" class="section-padding">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-8">
+                        <div class="title">
+                            <h2 class="text-uppercase">Hesabim</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-4 col-12" id="basics">
+                        <form action="#">
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-12">
+                                    <input type="text" name="text" id="name" placeholder="Adınız">
+                                </div>
+                                <div class="col-12">
+                                    <input type="email" name="subject" id="subject" placeholder="Email ünvanınız">
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" name="social-id" id="social-id" placeholder="Istifadəçi adınız">
+                                </div>
+                                <div class="col-12 password" >
+                                    <input type="text" name="social-id" id="social-id" placeholder="Parolu daxil edin">
+                                </div>
+                            </div>
+                            <button type="submit" id="edit_basic" class="btn edit">Düzəlt</button>
+                            <button type="submit" id="save" class="btn save">Yadda Saxla</button>
+                            <button type="submit" id="change_password" class="btn change">Parolu dəyiş</button>
+                        </form>
+                    
+                    </div>
+                    <div class="col-md-4 col-12" id="password">
+                        <form action="#">
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-12">
+                                    <input type="text" name="text" id="name" placeholder="Əvvəlki şifrəniz">
+                                </div>
+                                <div class="col-12">
+                                    <input type="email" name="subject" id="subject" placeholder="Yeni Şifrəniz">
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" name="social-id" id="social-id" placeholder="Yeni şifrəni təkrar daxil edin">
+                                </div>
+                            </div>
+                            <button type="submit" id="edit_password" class="btn edit">Düzəlt</button>
+                            <button type="submit" id="save" class="btn save">Yadda Saxla</button>
+                            <button type="submit" id="change_basics" class="btn change">Əsas məlumatları dəyiş</button>
+                        </form>
+                    
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer area starts -->
+    <footer>
+        <section id="footer_navigation">
+            <div class="container">
+                <div class="row section-padding justify-content-center">
+                    <div class="col-lg-4 col-sm-6 col-12 navigation_holder">
+                        <div class="footer_navigation">
+                            <h4>Naviqasiya</h4>
+                            <ul>
+                                <li><a href="">Əsas səhifə</a></li>
+                                <li><a href="">Kurslar</a></li>
+                                <li><a href="">Editor</a></li>
+                                <li><a href="">Əlaqə</a></li>
+                                <li><a href="">Daxil ol / Qeydiyyat</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-12 navigation_holder">
+                        <div class="footer_links">
+                            <h4>Linklər</h4>
+                            <ul>
+                                <li><a href="">Linkedin</a></li>
+                                <li><a href="">Github</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="copyright">
+            <div class="container">
+                <div class="row footer_copy">
+                    <div class="col-12">
+                        <div class="copyright">
+                            <p>Copyright © 2020, Developed by Kanan Bagaliyev</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <!-- footer area ends -->
+
+    <script src="https://kit.fontawesome.com/5745faddfa.js" crossorigin="anonymous"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+        let edit = $(".edit");
+        let save = $(".save");
+        let input = $("input")
+        let password = $(".password")
+        $("#change_password").click(function(e){
+            e.preventDefault();
+            $("#basics").fadeOut(function(){
+                $("#password").fadeIn()
+            })
+        })
+        $("#change_basics").click(function(e){
+            e.preventDefault();
+            $("#password").fadeOut(function(){
+                $("#basics").fadeIn()
+            })
+        })
+        edit.click(function(e){
+            e.preventDefault();
+            $(this).css({"display":"none"})
+            $(this).next().css({"display":"inline-block"})
+            if($(this).attr("id")=="edit_basic"){
+                password.css({"display":"block"})
+            }
+            $(this).parent().find("input").css({"pointer-events":"auto"})
+        })
+    </script>
+</body>
+</html>

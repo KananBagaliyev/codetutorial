@@ -65,6 +65,24 @@
   main #text_editor .code_editor {
     margin-bottom: 15px;
   }
+  main #account form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main #account form button[type="submit"] {
+    display: block;
+  }
+  main #account form button[id="save"] {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -517,6 +535,15 @@ header .nav_bar nav ul li a {
   -webkit-transition: .3s;
   transition: .3s;
   position: relative;
+}
+
+header .nav_bar nav ul .bookmark_dropdown .sub_menu {
+  width: 250px !important;
+  margin-left: -80px;
+}
+
+header .nav_bar nav ul .bookmark_dropdown .sub_menu button {
+  width: 100%;
 }
 
 header .nav_bar nav ul .sub_menu_holder .sub_menu {
@@ -1179,5 +1206,29 @@ main #bookmark .course_table .saved_courses td {
 main #bookmark .course_table .saved_courses .saved_course {
   margin-top: 15px;
   margin-left: 25px;
+}
+
+main #account #password {
+  display: none;
+}
+
+main #account .password {
+  display: none;
+}
+
+main #account input {
+  pointer-events: none;
+}
+
+main #account button[type="submit"] {
+  margin-top: 25px;
+}
+
+main #account button[class="btn change"] {
+  float: right;
+}
+
+main #account button[id="save"] {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

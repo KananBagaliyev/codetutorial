@@ -302,6 +302,15 @@ header{
                     
         
                 }
+                .bookmark_dropdown{
+                   .sub_menu{
+                        width: 250px!important;
+                        margin-left: -80px;
+                        button{
+                            width: 100%;
+                        }
+                   }
+                }
                 .sub_menu_holder{
                     .sub_menu{
                         display: flex;
@@ -871,6 +880,30 @@ main{
             width: 100%;  
         }
         
+    }
+}
+
+
+main{
+    #account{
+        #password{
+            display: none;
+        }
+        .password{
+            display: none;
+        }
+        input{
+            pointer-events: none;
+        }
+        button[type="submit"]{
+            margin-top: 25px;
+        }
+        button[class="btn change"]{
+            float: right;
+        }
+        button[id="save"]{
+            display: none;
+        }
     }
 }
 
