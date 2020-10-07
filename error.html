@@ -11,10 +11,6 @@
     <link rel="stylesheet" href="css/slick-theme.css">
 </head>
 <body>
-    <div class="preload">
-        <h2>İki dəfə düşün🤔<br>
-        Bir dəfə <span>Kodla</span>.</h2>
-    </div>
     <!-- navbar area starts -->
     <header>
         <div class="container">
@@ -34,7 +30,33 @@
                             <li><a class="special_underline" href="">Kurslar</a></li>
                             <li><a class="special_underline" href="">Editor</a></li>
                             <li><a class="special_underline" href="">Əlaqə</a></li>
-                            <li><a class="special_underline" href=""><i class="fas fa-bookmark"></i></a></li>
+                            <li class="sub_menu_holder bookmark_dropdown">
+                                <a href=""><i class="fas fa-bookmark" id="bookmarks"></i></a>
+                                <ul class="sub_menu">
+                                    <li>
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td><a href="">WorPress wp-config setup funtion</a></td>
+                                                    <td><a href=""><i class="fas fa-bookmark" id="bookmarks"></i></a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </li>
+                                    <li>
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td><a href="">WorPress wp-config setup funtion</a></td>
+                                                    <td><a href=""><i class="fas fa-bookmark" id="bookmarks"></i></a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </li>
+                                    <button class="btn text-center">Daha çox göstər</button>
+                                </ul>
+
+                            </li>
                             <!-- <li><a class="special_underline" href="">Daxil ol / Qeydiyyat</a></li> -->
                             <li class="sub_menu_holder">
                                 <a href="">Kanan Bagaliyev</a>
@@ -75,56 +97,11 @@
     <!-- navbar area ends -->
 
     <main>
-        <section id="account" class="section-padding">
+        <section id="error" class="section-padding">
             <div class="container">
-                <div class="row justify-content-center text-center">
-                    <div class="col-8">
-                        <div class="title">
-                            <h2 class="text-uppercase">Hesabim</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row d-flex justify-content-center">
-                    <div class="col-md-4 col-12" id="basics">
-                        <form action="#">
-                            <div class="row d-flex justify-content-center">
-                                <div class="col-12">
-                                    <input type="text" name="text" id="name" placeholder="Adınız">
-                                </div>
-                                <div class="col-12">
-                                    <input type="email" name="subject" id="subject" placeholder="Email ünvanınız">
-                                </div>
-                                <div class="col-12">
-                                    <input type="text" name="social-id" id="social-id" placeholder="Istifadəçi adınız">
-                                </div>
-                                <div class="col-12 password" >
-                                    <input type="text" name="social-id" id="social-id" placeholder="Parolu daxil edin">
-                                </div>
-                            </div>
-                            <button type="submit" id="edit_basic" class="btn edit">Düzəlt</button>
-                            <button type="submit" id="save" class="btn save">Yadda Saxla</button>
-                            <button type="submit" id="change_password" class="btn change">Parolu dəyiş</button>
-                        </form>
-                    
-                    </div>
-                    <div class="col-md-4 col-12" id="password">
-                        <form action="#">
-                            <div class="row d-flex justify-content-center">
-                                <div class="col-12">
-                                    <input type="text" name="text" id="name" placeholder="Əvvəlki şifrəniz">
-                                </div>
-                                <div class="col-12">
-                                    <input type="email" name="subject" id="subject" placeholder="Yeni Şifrəniz">
-                                </div>
-                                <div class="col-12">
-                                    <input type="text" name="social-id" id="social-id" placeholder="Yeni şifrəni təkrar daxil edin">
-                                </div>
-                            </div>
-                            <button type="submit" id="edit_password" class="btn edit">Düzəlt</button>
-                            <button type="submit" id="save" class="btn save">Yadda Saxla</button>
-                            <button type="submit" id="change_basics" class="btn change">Əsas məlumatları dəyiş</button>
-                        </form>
-                    
+                <div class="row">
+                    <div class="col-12">
+                        <img style="width:100%" src="img/error.png" alt="">
                     </div>
                 </div>
             </div>
@@ -173,38 +150,7 @@
             </div>
         </section>
     </footer>
-    <!-- footer area ends -->
+ 
 
-    <script src="https://kit.fontawesome.com/5745faddfa.js" crossorigin="anonymous"></script>
-    <script src="js/jquery.js"></script>
-    <script src="js/script.js"></script>
-
-    <script>
-        let edit = $(".edit");
-        let save = $(".save");
-        let input = $("input")
-        let password = $(".password")
-        $("#change_password").click(function(e){
-            e.preventDefault();
-            $("#basics").fadeOut(function(){
-                $("#password").fadeIn()
-            })
-        })
-        $("#change_basics").click(function(e){
-            e.preventDefault();
-            $("#password").fadeOut(function(){
-                $("#basics").fadeIn()
-            })
-        })
-        edit.click(function(e){
-            e.preventDefault();
-            $(this).css({"display":"none"})
-            $(this).next().css({"display":"inline-block"})
-            if($(this).attr("id")=="edit_basic"){
-                password.css({"display":"block"})
-            }
-            $(this).parent().find("input").css({"pointer-events":"auto"})
-        })
-    </script>
 </body>
 </html>

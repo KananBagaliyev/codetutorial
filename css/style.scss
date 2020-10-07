@@ -14,6 +14,10 @@ body{
     
 }
 
+.danger{
+    color:#b50d0d;
+}
+
 .preload {
     overflow: hidden;
     position: fixed;
@@ -306,8 +310,9 @@ header{
                    .sub_menu{
                         width: 250px!important;
                         margin-left: -80px;
-                        button{
-                            width: 100%;
+                        a{
+                            width: 100%!important;
+                            padding: 10px!important;
                         }
                    }
                 }
@@ -488,6 +493,17 @@ main{
                     transition: ease-in .3s;
                     position: absolute;
                 }
+                .add_bookmark{
+                    bottom: 10%;
+                    margin-top: 15px;
+                    display: block;
+                    font-size: 16px;
+                    color: #536DFE;
+                    -webkit-transition: ease-in .3s;
+                    transition: ease-in .3s;
+                    position: absolute;
+                    right: 60px;
+                }
             }
             
         }
@@ -584,22 +600,130 @@ main{
             }
         }
         
-    #article_content{
-        .article_share{
-            padding:3   0px 0 ;
-            a{
-                margin-right: 15px;
-                color: #fff;
-                height: 40px;
-                width: 40px;
-                display: inline-block;
-                border: 1px solid #383b40;
-                text-align: center;
-                line-height: 2.4;
-                border-radius: 50%;
+    }
+
+    #related_post{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        .post_grid_wrap{
+            .post_item{
+                overflow: hidden;
+                text-overflow: ellipsis;
+                background-color: transparent;
+                border: 1px solid #463F9E;
+                padding: 15px;
+                margin-bottom: 20px;
                 transition: .3s;
+                a{
+                    h4{
+                        font-size: 16px;
+                        color: #CCD6F6;
+                        margin-bottom: 10px;
+                    }
+                }
+                p{
+                    font-size: 14px;
+                    margin: 0;
+                }
             }
         }
+    }
+
+    #category_widget{
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li{
+                display: block;
+                background-color: #09172b;
+                padding: 10px 15px;
+                border-bottom: 1px solid #142237;
+                transition: .3s;
+                a{
+                    display: block;
+                    font-size: 15px;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    
+    
+    .article_share{
+        margin-top: 30px;
+        padding:3   0px 0 ;
+        a{
+            margin-right: 15px;
+            color: #fff;
+            height: 40px;
+            width: 40px;
+            display: inline-block;
+            border: 1px solid #383b40;
+            text-align: center;
+            line-height: 2.4;
+            border-radius: 50%;
+            transition: .3s;
+        }
+    }
+
+    
+    #comment_area{
+        margin-top: 50px;
+        .comment_list{
+            margin-bottom: 70px;
+            .comment_area_reply{
+                margin-left: 80px;
+            }
+            .comment_area{
+                margin-bottom: 30px;
+                position: relative;
+                img{
+                    float: left;
+                    height: 80px;
+                    width: 80px;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 30%;
+                    transform: translate(0);
+                    z-index: 9;
+                }
+                .commentor_area{
+                    padding: 30px 60px;
+                    border: 1px solid #142237;
+                    border-radius: 4px;
+                    position: relative;
+                    left: 40px;
+                    margin-bottom: 30px;
+                    width: 95%;
+                    h5{
+                        margin: 0;
+                        padding-bottom: 20px!important;
+                    }
+                    .comment_text{
+                        font-size: 15px;
+                        color: #fff;
+                        line-height: 24px;
+                    }
+                    
+                    .post_reaction{
+                        li{
+                            display: inline-block;
+                            margin-right: 40px;
+                            font-size: 14px;
+                            a{
+                                font-size: 14px;
+                                font-weight: 400;
+                                color: #fff;
+                                transition: all .3s;
+                            }
+                            i{
+                                padding-right: 15px;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
